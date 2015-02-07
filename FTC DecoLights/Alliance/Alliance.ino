@@ -42,6 +42,14 @@ PROGMEM const unsigned long pattern_test_green[10][10]={
   {0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0xff0000},
 };
 
+PROGMEM const unsigned long pattern_solid_red[10][1]={
+  {0xff0000,0xff0000,0xff0000,0xff0000,0xff0000,0xff0000,0xff0000,0xff0000,0xff0000,0xff0000},
+};
+
+PROGMEM const unsigned long pattern_solid_blue[10][1]={
+  {0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00,0x00ff00),
+};
+
 PROGMEM const unsigned long pattern_test_blue[10][10]={
   {0x00ff00,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000},
   {0x000000,0x00ff00,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000,0x000000},
@@ -163,9 +171,15 @@ void loop()
 {
 
   send_1M_pattern(pattern_test_red, 10, 500);
-  delay(500);
+  delay(1000);
   send_1M_pattern(pattern_test_blue, 10, 500);
-  delay(500);
+  delay(1000);
+  send_1M_pattern(pattern_solid_red, 10, 500);
+  delay(1000);
+  send_1M_pattern(pattern_solid_blue, 10, 500);
+  delay(1000);
+  while(1){}
+  /*
   send_1M_pattern(pattern_test_green, 10, 500);
   delay(500);
   send_1M_pattern(pattern_test_white, 10, 500);
@@ -177,7 +191,7 @@ void loop()
   send_1M_pattern(pattern_test_comet3, 10, 70);
   delay(500);
   
-  
+  */
   
   while (1)
   {
